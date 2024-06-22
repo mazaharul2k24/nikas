@@ -1,7 +1,11 @@
-import Image from "next/image";
+
+import Hero from "./_components/Hero";
 
 export default function Home() {
   return (
-<h1>hhh</h1>
+<>
+<Hero/>
+
+</>
   );
 }
