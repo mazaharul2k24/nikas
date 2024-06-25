@@ -102,7 +102,7 @@ const [invoicepData,setInvoicepdata]=useState([])
         </TableHeader>
       <TableBody>
           {invoicepData.map((invoice) => (
-            <TableRow >
+            <TableRow key={Math.random()} >
               <TableCell className="font-medium">{no++}</TableCell>
               <TableCell className="font-medium">{invoiceData.insertDate}</TableCell>
             
