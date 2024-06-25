@@ -25,7 +25,7 @@ const AnkeBnagla=Anek_Bangla({
   subsets:["bengali","latin","latin-ext"]
 })
 
-export default function page() {
+export default function Invoicepage() {
   
   const {id}=useParams()
 const [invoiceData,setInvoicedata]=useState([])
@@ -46,7 +46,7 @@ const [invoicepData,setInvoicepdata]=useState([])
     }).catch((Err)=>{
       console.log(Err)
     })
-  },[])
+  },[id])
 
   const totalAmount=invoicepData.reduce((acc,curr)=>acc+Number(curr.pPrice*curr.pQuantity),0)
 
