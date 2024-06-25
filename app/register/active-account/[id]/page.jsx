@@ -3,7 +3,7 @@ import React from 'react'
 import { useParams } from 'next/navigation'
 import { useEffect,useState } from 'react'
 import Link from 'next/link'
-export default function page() {
+export default function Accpage() {
   const [msg,setMsg]=useState("")
   const [error,setError]=useState("")
   const {id}=useParams()
@@ -33,7 +33,7 @@ console.log("faild to convert json")
     }
 
     ActiveAcc()
-  },[])
+  },[id])
 
   return (
     <div className='w-[40%] mx-auto border shadow-md rounded-md py-6 px-8 mt-10'>
