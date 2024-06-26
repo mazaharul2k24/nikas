@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { signIn } from 'next-auth/react'
+
 export default function Loginform() {
     const userDataobj={
         email:"",
@@ -57,20 +57,15 @@ export default function Loginform() {
 
     const handleSubmit=async(event)=>{
         event.preventDefault()
-        setLoading(true)
-       const res=await signIn("credentials",{
-       userData
-       })
-       if(res.error){
-        setError("Invalid crediantials")
-       }
+      console.log(userData)
     }
 
 
   return (
     <>
 
-    <div className="main w-[90%] md:w-[400px] border md:border-gray-200 border-indigo-400 rounded-md mx-auto mt-10 py-6 mb-8 shadow-xl ">
+   <div>
+   <div className="main w-[90%] md:w-[400px] border md:border-gray-200 border-indigo-400 rounded-md mx-auto mt-10 py-6 mb-8 shadow-xl ">
         <h1 className='text-xl text-center py-3 font-semibold'>Login</h1>
         <form onSubmit={handleSubmit} className='w-[90%] md:[80%] mx-auto'>
             <input type="email" className='w-full border py-2 rounded-md px-2 my-1 outline-none' placeholder='Email' value={userData.email} onChange={(e)=>handleInpur(e,"email")} />
@@ -85,6 +80,7 @@ export default function Loginform() {
         </div>
        
     </div>
+   </div>
     
     
     </>
